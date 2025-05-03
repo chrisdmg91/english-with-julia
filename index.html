@@ -4,27 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Репетитор английского языка – Джулия</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #ffffff;
     }
     header {
-      background-color: #003366;
+      background-image: url('https://tse4.mm.bing.net/th?id=OIP.RC_ObfMYVBVTibF9D0rv-gHaFW&pid=Api');
+      background-size: cover;
+      background-position: center;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 36px;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    header p {
+      font-size: 24px;
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 8px;
     }
     .container {
       display: flex;
       flex-wrap: wrap;
       max-width: 900px;
-      margin: 20px auto;
-      background-color: white;
+      margin: 40px auto;
+      background-color: #fff;
       padding: 20px;
       border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .profile-photo {
       flex: 1;
@@ -39,7 +65,7 @@
       flex: 2;
       padding: 0 20px;
     }
-    h1, h2 {
+    h2, h3 {
       color: #003366;
     }
     footer {
@@ -49,11 +75,63 @@
       padding: 10px;
       margin-top: 40px;
     }
+    a {
+      color: #0066cc;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      margin: 20px auto;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      width: fit-content;
+    }
+    .testimonials, .contact-form {
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .testimonial {
+      margin-bottom: 20px;
+    }
+    .testimonial p {
+      font-style: italic;
+    }
+    .testimonial span {
+      display: block;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: 'Poppins', sans-serif;
+    }
+    form button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Репетитор английского языка</h1>
+    <h1>Английский, который вы полюбите</h1>
     <p>Онлайн занятия для детей и взрослых</p>
   </header>
 
@@ -63,14 +141,37 @@
     </div>
     <div class="info">
       <h2>Здравствуйте! Меня зовут Джулия</h2>
-      <p>Предлагаю индивидуальные онлайн-уроки английского языка для детей и взрослых с нуля. Объясняю грамматику, помогаю развить письменную и устную речь, преодолеть языковой барьер.</p>
+      <p>Предлагаю индивидуальные онлайн-уроки английского языка для детей и взрослых с нуля. Объясняю грамматику, помогаю развить письменную и усную речь, преодолеть языковой барьер.</p>
       <p>Опыт работы в одной из самых престижных частных школ города Алматы – школа NGS.</p>
       <h3>Стоимость:</h3>
       <p>5000 тенге за урок (45 минут)</p>
       <h3>Контакты:</h3>
       <p>Email: <a href="mailto:djuletik_7@mail.ru">djuletik_7@mail.ru</a><br>
          WhatsApp: <a href="tel:+77026999719">+7 702 699 9719</a></p>
+      <a class="whatsapp-button" href="https://wa.me/77026999719" target="_blank">Напишите мне в WhatsApp</a>
     </div>
+  </div>
+
+  <div class="testimonials">
+    <h3>Отзывы учеников:</h3>
+    <div class="testimonial">
+      <p>Я боялась говорить, но с Джулией мы всё проходили понимающе и по этапам. Сейчас я легко общаюсь с клиентами из Европы!</p>
+      <span>Елена, 26 лет (уровень B1)</span>
+    </div>
+    <div class="testimonial">
+      <p>Очень добрая и внимательная преподаватель. Даже когда я переживала из-за ошибок, она меня поддерживала. Теперь я готова к Upper-Intermediate!</p>
+      <span>Алина, 19 лет (после B1+)</span>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3>Свяжитесь со мной:</h3>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Сообщение" rows="5" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
   </div>
 
   <footer>
