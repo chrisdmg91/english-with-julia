@@ -180,8 +180,9 @@
     </div>
   </div>
 
- <div class="testimonials">
-  <h3>Отзывы учеников:</h3>    
+<div class="testimonials">
+  <h3>Отзывы учеников:</h3>
+  <div id="testimonial-container" style="max-height: 1000px; overflow: hidden; transition: max-height 0.5s ease;">   
   <div class="testimonial"><p>Я боялась говорить, но с Джулией всё стало понятно и просто. Сейчас уверенно использую английский в переписке.</p><span>Елена, 26 лет (уровень B1)</span></div>
   <div class="testimonial"><p>Очень добрая и внимательная преподаватель. Поддерживала меня даже при сложных темах. Сейчас готовлюсь к уровню Upper-Intermediate.</p><span>Алина, 19 лет (после B1+)</span></div>
   <div class="testimonial"><p>Начинал с нуля. Через полгода начал понимать фильмы и читать статьи. Спасибо!</p><span>Игорь, 35 лет (уровень A2 → B1)</span></div>
@@ -228,7 +229,18 @@
   <div class="testimonial"><p>Наши видеоуроки ощущаются как занятия вживую — очень эффективно.</p><span>Денис, 46 лет (уровень B1+)</span></div>
   <div class="testimonial"><p>Она мотивирует меня развиваться каждую неделю.</p><span>Полина, 42 года (уровень A2)</span></div>
 </div>
+  <button onclick="toggleTestimonials()" style="margin-top: 10px;">Показать все отзывы</button>
+</div>
 
+<script>
+  let expanded = false;
+  function toggleTestimonials() {
+    const container = document.getElementById('testimonial-container');
+    container.style.maxHeight = expanded ? '1000px' : '5000px';
+    event.target.innerText = expanded ? 'Показать все отзывы' : 'Скрыть отзывы';
+    expanded = !expanded;
+  }
+</script>
   <div class="contact-form">
     <h3>Свяжитесь со мной:</h3>
     <form action="https://formspree.io/f/mwkgygqp" method="POST">

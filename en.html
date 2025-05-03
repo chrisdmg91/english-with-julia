@@ -172,8 +172,10 @@
       <a class="whatsapp-button" href="https://wa.me/77026999719" target="_blank">Message me on WhatsApp</a>
     </div>
   </div>
+
 <div class="testimonials">
-  <h3>Student Testimonials:</h3>    
+  <h3>Отзывы учеников:</h3>
+  <div id="testimonial-container" style="max-height: 1000px; overflow: hidden; transition: max-height 0.5s ease;">    
   <div class="testimonial"><p>I was afraid to speak, but with Julia everything became clear and simple. Now I confidently use English in written communication.</p><span>Elena, 26 years old (Level B1)</span></div>
   <div class="testimonial"><p>A very kind and attentive teacher. She supported me even through difficult topics. I’m now preparing for Upper-Intermediate.</p><span>Alina, 19 years old (After B1+)</span></div>
   <div class="testimonial"><p>I started from scratch. In six months, I began to understand movies and read articles. Thank you!</p><span>Igor, 35 years old (Level A2 → B1)</span></div>
@@ -219,7 +221,21 @@
   <div class="testimonial"><p>My spoken English is way more natural now.</p><span>Ksenia, 31 years old (Level Intermediate)</span></div>
   <div class="testimonial"><p>Our video lessons feel just like in-person classes – very effective.</p><span>Denis, 46 years old (Level B1+)</span></div>
   <div class="testimonial"><p>She motivates me to keep improving every week.</p><span>Polina, 42 years old (Level A2)</span></div>
+ </div>
+  <button onclick="toggleTestimonials()" style="margin-top: 10px;">Показать все отзывы</button>
 </div>
+
+<script>
+  let expanded = false;
+  function toggleTestimonials() {
+    const container = document.getElementById('testimonial-container');
+    container.style.maxHeight = expanded ? '1000px' : '5000px';
+    event.target.innerText = expanded ? 'Показать все отзывы' : 'Скрыть отзывы';
+    expanded = !expanded;
+  }
+</script>
+
+
 <div class="contact-form">
     <h3>Contact me:</h3>
     <form action="https://formspree.io/f/mwkgygqp" method="POST">
