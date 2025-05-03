@@ -252,9 +252,6 @@
       if (!expanded) {
         container.style.maxHeight = container.scrollHeight + 'px';
         button.innerText = 'Hide reviews';
-        setTimeout(() => {
-          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
       } else {
         container.style.maxHeight = '1000px';
         button.innerText = 'See all reviews';
