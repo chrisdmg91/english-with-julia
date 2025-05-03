@@ -174,7 +174,7 @@
   </div>
 
 <div class="testimonials">
-  <h3>Отзывы учеников:</h3>
+  <h3>What My Students Say:</h3>
   <div id="testimonial-container" style="max-height: 1000px; overflow: hidden; transition: max-height 0.5s ease;">    
   <div class="testimonial"><p>I was afraid to speak, but with Julia everything became clear and simple. Now I confidently use English in written communication.</p><span>Elena, 26 years old (Level B1)</span></div>
   <div class="testimonial"><p>A very kind and attentive teacher. She supported me even through difficult topics. I’m now preparing for Upper-Intermediate.</p><span>Alina, 19 years old (After B1+)</span></div>
@@ -222,7 +222,7 @@
   <div class="testimonial"><p>Our video lessons feel just like in-person classes – very effective.</p><span>Denis, 46 years old (Level B1+)</span></div>
   <div class="testimonial"><p>She motivates me to keep improving every week.</p><span>Polina, 42 years old (Level A2)</span></div>
  </div>
-  <button onclick="toggleTestimonials()" style="margin-top: 10px;">Показать все отзывы</button>
+  <button onclick="toggleTestimonials()" style="margin-top: 10px;">See all reviews</button>
 </div>
 
 <script>
@@ -230,7 +230,7 @@
   function toggleTestimonials() {
     const container = document.getElementById('testimonial-container');
     container.style.maxHeight = expanded ? '1000px' : '5000px';
-    event.target.innerText = expanded ? 'Показать все отзывы' : 'Скрыть отзывы';
+    event.target.innerText = expanded ? 'See all reviews' : 'Hide reviews';
     expanded = !expanded;
   }
 </script>
