@@ -114,23 +114,19 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-.testimonial {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #003366;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.testimonial-header {
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
     .testimonial {
       margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      border-left: 5px solid #003366;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .testimonial-header {
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 10px;
+      font-size: 1rem;
     }
     .testimonial p {
       font-style: italic;
@@ -156,6 +152,13 @@
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    /* Smooth testimonials */
+    #testimonial-container {
+      max-height: 1000px;
+      overflow: hidden;
+      transition: max-height 0.6s ease-in-out, padding 0.4s ease;
     }
   </style>
 </head>
@@ -247,15 +250,25 @@
   <button onclick="toggleTestimonials()" style="margin-top: 10px;">Показать все отзывы</button>
 </div>
 
-<script>
-  let expanded = false;
-  function toggleTestimonials() {
-    const container = document.getElementById('testimonial-container');
-    container.style.maxHeight = expanded ? '1000px' : '5000px';
-    event.target.innerText = expanded ? 'Показать все отзывы' : 'Скрыть отзывы';
-    expanded = !expanded;
-  }
-</script>
+ <script>
+    let expanded = false;
+    function toggleTestimonials(button) {
+      const container = document.getElementById('testimonial-container');
+
+      if (!expanded) {
+        container.style.maxHeight = container.scrollHeight + 'px';
+        button.innerText = 'Hide reviews';
+        setTimeout(() => {
+          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else {
+        container.style.maxHeight = '1000px';
+        button.innerText = 'See all reviews';
+      }
+
+      expanded = !expanded;
+    }
+  </script>
   <div class="contact-form">
     <h3>Свяжитесь со мной:</h3>
     <form action="https://formspree.io/f/mwkgygqp" method="POST">
