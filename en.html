@@ -107,23 +107,19 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-.testimonial {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #003366;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.testimonial-header {
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
     .testimonial {
       margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      border-left: 5px solid #003366;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .testimonial-header {
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 10px;
+      font-size: 1rem;
     }
     .testimonial p {
       font-style: italic;
@@ -149,6 +145,13 @@
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    /* Smooth testimonials */
+    #testimonial-container {
+      max-height: 1000px;
+      overflow: hidden;
+      transition: max-height 0.6s ease-in-out, padding 0.4s ease;
     }
   </style>
 </head>
@@ -188,70 +191,80 @@
     </div>
   </div>
 
-<div class="testimonials">
-  <h3>What My Students Say:</h3>
-  <div id="testimonial-container" style="max-height: 1000px; overflow: hidden; transition: max-height 0.5s ease;">    
-  <div class="testimonial"><p>I was afraid to speak, but with Julia everything became clear and simple. Now I confidently use English in written communication.</p><span>Elena, 26 years old (Level B1)</span></div>
-  <div class="testimonial"><p>A very kind and attentive teacher. She supported me even through difficult topics. I’m now preparing for Upper-Intermediate.</p><span>Alina, 19 years old (After B1+)</span></div>
-  <div class="testimonial"><p>I started from scratch. In six months, I began to understand movies and read articles. Thank you!</p><span>Igor, 35 years old (Level A2 → B1)</span></div>
-  <div class="testimonial"><p>I thought it was too late at my age, but with Julia it turned out to be fun and engaging.</p><span>Marina, 42 years old (Beginner)</span></div>
-  <div class="testimonial"><p>Grammar no longer scares me! Julia explains everything clearly and simply.</p><span>Oleg, 39 years old (Level B1)</span></div>
-  <div class="testimonial"><p>I started learning English for travel. Now I can confidently order in restaurants!</p><span>Anna, 33 years old (Pre-Intermediate)</span></div>
-  <div class="testimonial"><p>Highly recommended for anyone afraid to speak. Julia helps you relax and practice.</p><span>Maksim, 28 years old (Level B1)</span></div>
-  <div class="testimonial"><p>I study for work. My business emails have become much more confident and professional.</p><span>Svetlana, 37 years old (Intermediate)</span></div>
-  <div class="testimonial"><p>Julia is always supportive. She’s a wonderful teacher and person.</p><span>Yuri, 41 years old (Level B1+)</span></div>
-  <div class="testimonial"><p>Pronunciation used to be hard, but now my colleagues understand me easily.</p><span>Ekaterina, 29 years old (Level A2 → B1)</span></div>
-  <div class="testimonial"><p>I was scared to start, but now English is a part of my daily life.</p><span>Alexander, 38 years old (Beginner → A2)</span></div>
-  <div class="testimonial"><p>I prepared for an interview and got hired by an international company!</p><span>Victoria, 31 years old (Intermediate)</span></div>
-  <div class="testimonial"><p>Our daughter studied with Julia and now reads books in English!</p><span>Tatyana, 45 years old (for daughter, Level A1 → B1)</span></div>
-  <div class="testimonial"><p>Great teaching method. I never thought I’d actually be able to speak!</p><span>Andrey, 40 years old (Beginner)</span></div>
-  <div class="testimonial"><p>After two months of lessons, I started understanding podcasts and shows.</p><span>Larisa, 36 years old (Level A2)</span></div>
-  <div class="testimonial"><p>Lessons were held in a warm and friendly atmosphere. I'm very thankful!</p><span>Oksana, 34 years old (Level B1)</span></div>
-  <div class="testimonial"><p>I’m retired, but I never felt embarrassed starting from scratch. Julia really motivates.</p><span>Vladimir, 56 years old (Beginner)</span></div>
-  <div class="testimonial"><p>I enjoy every single session – never boring.</p><span>Vladislav, 47 years old (Level B1)</span></div>
-  <div class="testimonial"><p>Julia’s patient approach helped me overcome my fear of speaking.</p><span>Mila, 27 years old (Level B1)</span></div>
-  <div class="testimonial"><p>Each lesson feels tailored just for me. I make steady progress.</p><span>Denis, 52 years old (Level Beginner)</span></div>
-  <div class="testimonial"><p>She’s helped me believe in my ability to become fluent.</p><span>Yulia, 31 years old (Level Pre-Intermediate)</span></div>
-  <div class="testimonial"><p>Our lessons are fun, yet focused and productive.</p><span>Nikita, 30 years old (Level A1)</span></div>
-  <div class="testimonial"><p>She helped me get comfortable with English pronunciation.</p><span>Veronika, 56 years old (Level Beginner)</span></div>
-  <div class="testimonial"><p>Julia is the best teacher I’ve had – she truly listens.</p><span>Gleb, 36 years old (Level B1)</span></div>
-  <div class="testimonial"><p>The confidence I gained in her classes is priceless.</p><span>Natalia, 48 years old (Level B1+)</span></div>
-  <div class="testimonial"><p>She gave me the tools to succeed in job interviews abroad.</p><span>Stepan, 29 years old (Level Upper-Intermediate)</span></div>
-  <div class="testimonial"><p>She prepares each lesson with care and energy.</p><span>Olga, 55 years old (Level Pre-Intermediate)</span></div>
-  <div class="testimonial"><p>I restarted learning English after 10 years, and she made it easy.</p><span>Oleg, 37 years old (Level Pre-Intermediate)</span></div>
-  <div class="testimonial"><p>Before Julia, I never finished an English course. Now I did!</p><span>Daria, 39 years old (Level Beginner)</span></div>
-  <div class="testimonial"><p>My reading and vocabulary have grown significantly.</p><span>Denis, 54 years old (Level A2)</span></div>
-  <div class="testimonial"><p>Her structure and clarity are ideal for adult learners.</p><span>Polina, 56 years old (Level A1)</span></div>
-  <div class="testimonial"><p>She adapted her style when I struggled – it made a huge difference.</p><span>Evgeny, 37 years old (Level A2)</span></div>
-  <div class="testimonial"><p>I now take part in team calls without fear!</p><span>Olga, 52 years old (Level Beginner)</span></div>
-  <div class="testimonial"><p>We always discuss interesting topics – it's not just grammar drills.</p><span>Nikita, 46 years old (Level A1)</span></div>
-  <div class="testimonial"><p>She made learning enjoyable again after years of struggle.</p><span>Daria, 42 years old (Level B1)</span></div>
-  <div class="testimonial"><p>My English used to be stuck, now I feel fluent again.</p><span>Victor, 27 years old (Level Upper-Intermediate)</span></div>
-  <div class="testimonial"><p>Her pronunciation tips changed how I speak – for the better.</p><span>Inna, 36 years old (Level A2)</span></div>
-  <div class="testimonial"><p>I can finally talk to my international colleagues with ease.</p><span>Gleb, 55 years old (Level Beginner)</span></div>
-  <div class="testimonial"><p>Even complex tenses feel simple the way she explains them.</p><span>Natalia, 22 years old (Level A2)</span></div>
-  <div class="testimonial"><p>Thanks to Julia, I finally passed my IELTS exam.</p><span>Roman, 52 years old (Level Upper-Intermediate)</span></div>
-  <div class="testimonial"><p>Thanks to her, I now tutor my younger brother in English.</p><span>Mila, 30 years old (Level Intermediate)</span></div>
-  <div class="testimonial"><p>She’s always on time, focused, and encouraging.</p><span>Stepan, 26 years old (Level B1)</span></div>
-  <div class="testimonial"><p>My spoken English is way more natural now.</p><span>Ksenia, 31 years old (Level Intermediate)</span></div>
-  <div class="testimonial"><p>Our video lessons feel just like in-person classes – very effective.</p><span>Denis, 46 years old (Level B1+)</span></div>
-  <div class="testimonial"><p>She motivates me to keep improving every week.</p><span>Polina, 42 years old (Level A2)</span></div>
- </div>
-  <button onclick="toggleTestimonials()" style="margin-top: 10px;">See all reviews</button>
-</div>
+  <div class="testimonials">
+    <h3>What My Students Say:</h3>
+    <div id="testimonial-container">
+<div class="testimonial"><p>I was afraid to speak, but with Julia everything became clear and simple. Now I confidently use English in written communication.</p><span>Elena, 26 years old (Level B1)</span></div>
+<div class="testimonial"><p>A very kind and attentive teacher. She supported me even through difficult topics. I’m now preparing for Upper-Intermediate.</p><span>Alina, 19 years old (After B1+)</span></div>
+<div class="testimonial"><p>I started from scratch. In six months, I began to understand movies and read articles. Thank you!</p><span>Igor, 35 years old (Level A2 → B1)</span></div>
+<div class="testimonial"><p>I thought it was too late at my age, but with Julia it turned out to be fun and engaging.</p><span>Marina, 42 years old (Beginner)</span></div>
+<div class="testimonial"><p>Grammar no longer scares me! Julia explains everything clearly and simply.</p><span>Oleg, 39 years old (Level B1)</span></div>
+<div class="testimonial"><p>I started learning English for travel. Now I can confidently order in restaurants!</p><span>Anna, 33 years old (Pre-Intermediate)</span></div>
+<div class="testimonial"><p>Highly recommended for anyone afraid to speak. Julia helps you relax and practice.</p><span>Maksim, 28 years old (Level B1)</span></div>
+<div class="testimonial"><p>I study for work. My business emails have become much more confident and professional.</p><span>Svetlana, 37 years old (Intermediate)</span></div>
+<div class="testimonial"><p>Julia is always supportive. She’s a wonderful teacher and person.</p><span>Yuri, 41 years old (Level B1+)</span></div>
+<div class="testimonial"><p>Pronunciation used to be hard, but now my colleagues understand me easily.</p><span>Ekaterina, 29 years old (Level A2 → B1)</span></div>
+<div class="testimonial"><p>I was scared to start, but now English is a part of my daily life.</p><span>Alexander, 38 years old (Beginner → A2)</span></div>
+<div class="testimonial"><p>I prepared for an interview and got hired by an international company!</p><span>Victoria, 31 years old (Intermediate)</span></div>
+<div class="testimonial"><p>Our daughter studied with Julia and now reads books in English!</p><span>Tatyana, 45 years old (for daughter, Level A1 → B1)</span></div>
+<div class="testimonial"><p>Great teaching method. I never thought I’d actually be able to speak!</p><span>Andrey, 40 years old (Beginner)</span></div>
+<div class="testimonial"><p>After two months of lessons, I started understanding podcasts and shows.</p><span>Larisa, 36 years old (Level A2)</span></div>
+<div class="testimonial"><p>Lessons were held in a warm and friendly atmosphere. I'm very thankful!</p><span>Oksana, 34 years old (Level B1)</span></div>
+<div class="testimonial"><p>I’m retired, but I never felt embarrassed starting from scratch. Julia really motivates.</p><span>Vladimir, 56 years old (Beginner)</span></div>
+<div class="testimonial"><p>I enjoy every single session – never boring.</p><span>Vladislav, 47 years old (Level B1)</span></div>
+<div class="testimonial"><p>Julia’s patient approach helped me overcome my fear of speaking.</p><span>Mila, 27 years old (Level B1)</span></div>
+<div class="testimonial"><p>Each lesson feels tailored just for me. I make steady progress.</p><span>Denis, 52 years old (Level Beginner)</span></div>
+<div class="testimonial"><p>She’s helped me believe in my ability to become fluent.</p><span>Yulia, 31 years old (Level Pre-Intermediate)</span></div>
+<div class="testimonial"><p>Our lessons are fun, yet focused and productive.</p><span>Nikita, 30 years old (Level A1)</span></div>
+<div class="testimonial"><p>She helped me get comfortable with English pronunciation.</p><span>Veronika, 56 years old (Level Beginner)</span></div>
+<div class="testimonial"><p>Julia is the best teacher I’ve had – she truly listens.</p><span>Gleb, 36 years old (Level B1)</span></div>
+<div class="testimonial"><p>The confidence I gained in her classes is priceless.</p><span>Natalia, 48 years old (Level B1+)</span></div>
+<div class="testimonial"><p>She gave me the tools to succeed in job interviews abroad.</p><span>Stepan, 29 years old (Level Upper-Intermediate)</span></div>
+<div class="testimonial"><p>She prepares each lesson with care and energy.</p><span>Olga, 55 years old (Level Pre-Intermediate)</span></div>
+<div class="testimonial"><p>I restarted learning English after 10 years, and she made it easy.</p><span>Oleg, 37 years old (Level Pre-Intermediate)</span></div>
+<div class="testimonial"><p>Before Julia, I never finished an English course. Now I did!</p><span>Daria, 39 years old (Level Beginner)</span></div>
+<div class="testimonial"><p>My reading and vocabulary have grown significantly.</p><span>Denis, 54 years old (Level A2)</span></div>
+<div class="testimonial"><p>Her structure and clarity are ideal for adult learners.</p><span>Polina, 56 years old (Level A1)</span></div>
+<div class="testimonial"><p>She adapted her style when I struggled – it made a huge difference.</p><span>Evgeny, 37 years old (Level A2)</span></div>
+<div class="testimonial"><p>I now take part in team calls without fear!</p><span>Olga, 52 years old (Level Beginner)</span></div>
+<div class="testimonial"><p>We always discuss interesting topics – it's not just grammar drills.</p><span>Nikita, 46 years old (Level A1)</span></div>
+<div class="testimonial"><p>She made learning enjoyable again after years of struggle.</p><span>Daria, 42 years old (Level B1)</span></div>
+<div class="testimonial"><p>My English used to be stuck, now I feel fluent again.</p><span>Victor, 27 years old (Level Upper-Intermediate)</span></div>
+<div class="testimonial"><p>Her pronunciation tips changed how I speak – for the better.</p><span>Inna, 36 years old (Level A2)</span></div>
+<div class="testimonial"><p>I can finally talk to my international colleagues with ease.</p><span>Gleb, 55 years old (Level Beginner)</span></div>
+<div class="testimonial"><p>Even complex tenses feel simple the way she explains them.</p><span>Natalia, 22 years old (Level A2)</span></div>
+<div class="testimonial"><p>Thanks to Julia, I finally passed my IELTS exam.</p><span>Roman, 52 years old (Level Upper-Intermediate)</span></div>
+<div class="testimonial"><p>Thanks to her, I now tutor my younger brother in English.</p><span>Mila, 30 years old (Level Intermediate)</span></div>
+<div class="testimonial"><p>She’s always on time, focused, and encouraging.</p><span>Stepan, 26 years old (Level B1)</span></div>
+<div class="testimonial"><p>My spoken English is way more natural now.</p><span>Ksenia, 31 years old (Level Intermediate)</span></div>
+<div class="testimonial"><p>Our video lessons feel just like in-person classes – very effective.</p><span>Denis, 46 years old (Level B1+)</span></div>
+<div class="testimonial"><p>She motivates me to keep improving every week.</p><span>Polina, 42 years old (Level A2)</span></div>
 
-<script>
-  let expanded = false;
-  function toggleTestimonials() {
-    const container = document.getElementById('testimonial-container');
-    container.style.maxHeight = expanded ? '1000px' : '5000px';
-    event.target.innerText = expanded ? 'See all reviews' : 'Hide reviews';
-    expanded = !expanded;
-  }
-</script>
+    </div>
+    <button onclick="toggleTestimonials(this)" style="margin-top: 10px;">See all reviews</button>
+  </div>
 
+  <script>
+    let expanded = false;
+    function toggleTestimonials(button) {
+      const container = document.getElementById('testimonial-container');
 
-<div class="contact-form">
+      if (!expanded) {
+        container.style.maxHeight = container.scrollHeight + 'px';
+        button.innerText = 'Hide reviews';
+        setTimeout(() => {
+          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else {
+        container.style.maxHeight = '1000px';
+        button.innerText = 'See all reviews';
+      }
+
+      expanded = !expanded;
+    }
+  </script>
+
+  <div class="contact-form">
     <h3>Contact me:</h3>
     <form action="https://formspree.io/f/mwkgygqp" method="POST">
       <input type="text" name="name" placeholder="Name" required>
