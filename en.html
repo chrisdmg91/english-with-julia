@@ -263,15 +263,16 @@
 
 <div class="review-form">
   <h3>Write a Review:</h3>
-  <form id="reviewForm" action="https://formspree.io/f/mwkgygqp" method="POST">
-    <input type="text" name="name" id="reviewerName" placeholder="Your name" required>
-    <input type="number" name="age" id="reviewerAge" placeholder="Your age" required>
-    <input type="text" name="level" id="reviewerLevel" placeholder="Your English level (optional)">
-    <textarea name="review" id="reviewText" placeholder="Your review" rows="5" required></textarea>
+  <form id="reviewForm" action="https://formspree.io/f/manoegkz" method="POST">
+    <input type="email" name="email" placeholder="Your email" required>
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="number" name="age" placeholder="Your age" required>
+    <input type="text" name="level" placeholder="Your English level (optional)">
+    <textarea name="review" placeholder="Your review" rows="5" required></textarea>
     <button type="submit">Submit Review</button>
   </form>
   <div id="reviewMessage" style="display:none; color: green; margin-top: 10px; font-weight: bold;">
-    Thank you for your review!
+    Your review is under evaluation. Thank you!
   </div>
 </div>
 
@@ -282,51 +283,28 @@
 
 <script>
   document.getElementById('reviewForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Μπλοκάρει την τυπική αποστολή φόρμας
+    event.preventDefault();
 
-    // Παίρνουμε τιμές από τα input fields
-    const name = document.getElementById('reviewerName').value;
-    const age = document.getElementById('reviewerAge').value;
-    const level = document.getElementById('reviewerLevel').value;
-    const review = document.getElementById('reviewText').value;
-
-    // Δημιουργία νέου testimonial div
-    const testimonialDiv = document.createElement('div');
-    testimonialDiv.classList.add('testimonial');
-
-    const p = document.createElement('p');
-    p.innerText = review;
-    testimonialDiv.appendChild(p);
-
-    const span = document.createElement('span');
-    span.innerText = level
-      ? `${name}, ${age} years old (Level ${level})`
-      : `${name}, ${age} years old`;
-    testimonialDiv.appendChild(span);
-
-    // Τοποθέτηση της νέας κριτικής στην αρχή της λίστας
-    const container = document.getElementById('testimonial-container');
-    container.insertBefore(testimonialDiv, container.firstChild);
-
-    // Καθαρισμός φόρμας
-    document.getElementById('reviewForm').reset();
-
-    // Εμφάνιση μηνύματος "ευχαριστώ"
-    const message = document.getElementById('reviewMessage');
-    message.style.display = 'block';
-    message.innerText = 'Thank you for your review!';
-    setTimeout(() => {
-      message.style.display = 'none';
-    }, 4000);
-
-    // Αποστολή δεδομένων στο Formspree (email)
-    fetch("https://formspree.io/f/mwkgygqp", {
+    // Στέλνουμε τη φόρμα στο Formspree
+    fetch("https://formspree.io/f/manoegkz", {
       method: "POST",
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(document.getElementById('reviewForm'))
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: new FormData(this)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Εμφανίζουμε μήνυμα και καθαρίζουμε τη φόρμα
+        document.getElementById('reviewForm').reset();
+        const msg = document.getElementById('reviewMessage');
+        msg.style.display = 'block';
+      } else {
+        alert("There was an error sending your review.");
+      }
     })
     .catch(error => {
-      alert("Error submitting the review.");
+      alert("Error submitting the form. Please try again later.");
     });
   });
 </script>
