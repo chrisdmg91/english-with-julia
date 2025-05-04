@@ -106,7 +106,7 @@
       display: block;
       width: fit-content;
     }
-    .testimonials, .contact-form {
+    .testimonials, .review-form {
       max-width: 900px;
       margin: 20px auto;
       background-color: #fff;
@@ -269,12 +269,15 @@
       expanded = !expanded;
     }
   </script>
-  <div class="contact-form">
-    <h3>Свяжитесь со мной:</h3>
-    <form action="https://formspree.io/f/mwkgygqp" method="POST">
-      <input type="text" name="name" placeholder="Ваше имя" required>
+
+  <div class="review-form">
+  <h3>Написать отзыв:</h3>
+  <form id="reviewForm" action="https://formspree.io/f/manoegkz" method="POST">
       <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Сообщение" rows="5" required></textarea>
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="number" name="age" placeholder="Ваш возраст" required>
+      <input type="text" name="level" placeholder="Ваш уровень английского (необязательно)">
+      <textarea name="review" placeholder="Ваш отзыв" rows="5" required></textarea>
       <button type="submit">Отправить</button>
     </form>
   </div>
@@ -283,5 +286,35 @@
     &copy; 2025 Джулия | Онлайн-репетитор английского языка
   </footer>
 </body>
+
+
+<script>
+  document.getElementById('reviewForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Στέλνουμε τη φόρμα στο Formspree
+    fetch("https://formspree.io/f/manoegkz", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: new FormData(this)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Εμφανίζουμε μήνυμα και καθαρίζουμε τη φόρμα
+        document.getElementById('reviewForm').reset();
+        const msg = document.getElementById('reviewMessage');
+        msg.style.display = 'block';
+      } else {
+        alert("There was an error sending your review.");
+      }
+    })
+    .catch(error => {
+      alert("Error submitting the form. Please try again later.");
+    });
+  });
+</script>
+
 </html>
 
